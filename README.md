@@ -1,65 +1,64 @@
-# DromoLys_FullStack_Assignment
-Full-Stack Take-Home Assignment (48 Hours)
+# CSV Analyzer (Full Stack Assignment)
 
-
-
-## 📦 Submission Instructions (Mandatory)
-
-All candidates must submit their solution using the official public GitHub repository:
-
-👉 **[https://github.com/career-dromolys/DromoLys_FullStack_Assignment](https://github.com/career-dromolys/DromoLys_FullStack_Assignment)**
-
-Please follow the steps below carefully.
+A web application to upload CSV files, preview data, and generate statistics and histograms for selected columns.
 
 ---
 
-### 1. Fork & Branch
+## Tech Stack
 
-* Fork the above repository to your GitHub account.
-* Create a **new branch with your full name**
-* Do **not** commit directly to the `main` branch.
+**Frontend**
+- React (Vite)
+- Tailwind CSS
+- Axios
+- Recharts
+- React Icons
+
+**Backend**
+- Node.js
+- Express.js
+- MongoDB (Database: CSV)
+- Mongoose
+- Multer
+- dotenv
+- CSV Parser
 
 ---
 
-### 2. Project Structure (Strict)
+## Setup & Run Instructions
 
-Your implementation **must** follow this folder structure inside the repository:
+### Run Locally
 
-```text
-DromoLys_FullStack_Assignment/
-├── frontend/
-│   └── (React / UI code)
-├── backend/
-│   └── (API / server code)
-└── README.md
+#### Backend
+```bash
+cd backend
+npm install
+npm start
+```
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-* `frontend/` → UI implementation (table, stats panel, histogram, etc.)
-* `backend/` → CSV parsing, statistics, and histogram APIs
-* You may choose any tech stack, but **backend computation is mandatory**
+## Assumptions
 
----
+- CSV must contain headers in the first row
+- Only .csv files are supported
+- Statistics and histograms apply to numeric columns
+- Empty values are counted as missing values
 
-### 3. README Requirements
+## Limitations
 
-Update `README.md` with:
+- No authentication implemented
+- Large CSV files may affect performance
+- Complex CSV formats (quoted/multiline) may not be fully supported
+- No dataset history persistence
 
-* Tech stack used (frontend + backend)
-* Setup & run instructions (local / Docker)
-* API endpoints implemented
-* Assumptions, limitations, and tie-handling logic (if any)
+## Tie-Handling Logic
 
----
+- If multiple values have the same highest frequency (mode), one valid mode is returned
+- If no valid mode exists, backend returns "Not applicable"
+- Median for even number of values is calculated as average of two middle values
 
-### 4. Final Submission (via Email)
 
-Push your completed work to your named branch and email the following details to:
-
-📧 **careers.dromolys@gmail.com**
-
-* GitHub repository link (**your fork**)
-* Branch name used for submission
-* 5–10 line summary explaining your approach and design choices
-* **2–3 screenshots** of the running application (for UI reference)
-
----
